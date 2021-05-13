@@ -2,7 +2,6 @@ body {
   font-family: "Lato", "sans-serif";
   -webkit-font-smoothing: antialiased;
   color: #232323;
-  height: 4000px;
 }
 
 nav li:last-child a {
@@ -36,4 +35,30 @@ section.hero {
   background: #FE5F1E;
   color: #fff;
   border-color: #fff;
+}
+
+.btn-primary {
+  background: #FE5F1E;
+  transition: all 0.3 ease-in-out;
+}
+.btn-primary:hover {
+  background: #B23301;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+section.cart .amount {
+  color: primary;
+}
+
+section.login {
+  background: #F8F8F8;
+  min-height: calc(100vh-86px);
+}
+section.login a {
+  color: #FE5F1E;
+}
+section.login a:hover {
+  color: #B23301;
 }
