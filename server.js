@@ -8,8 +8,9 @@ const PORT=process.env.PORT || 3000
 const mongoose=require('mongoose')
 const session=require('express-session')
 const flash=require('express-flash')
+const MongoDbStore=require('connect-mongo')
 
-const url='mongodb://localhost/burger';
+const url='mongodb://localhost/oxygen';
 mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:true});
 const connection=mongoose.connection;
 connection.once('open',()=>{
@@ -18,12 +19,21 @@ connection.once('open',()=>{
     console.log('Connection failed..')
 });
 
+
 app.use(session({
     secret:process.env.COOKIES_SECRET,
     resave:false,
+    store: MongoDbStore.create({
+        mongoUrl: url
+    }),
     saveUninitialized:false,
-store:mongoStore,
 cookie:{maxAge:1000*60*60*24}}))
+
+app.use(express.json())
+app.use((req,res,next)=>{
+    res.locals.session=req.session
+    next()
+ })
 
 app.use(flash())
 app.use(express.static('public'))

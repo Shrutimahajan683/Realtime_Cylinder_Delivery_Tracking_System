@@ -2,64 +2,64 @@
     "_id": {
       "$oid": "5eee651f739f8c674fd736ee"
     },
-    "name": "cheezeBurger",
+    "name": "Philips Ever Flo",
     "image": "photo.png",
-    "price": "250",
-    "size": "small"
+    "price": "45000",
+    "size": "5L 93% concentration"
   },{
     "_id": {
       "$oid": "5eee6671a27a66807cf2bea3"
     },
-    "name": "Beef Burger",
+    "name": "BPL Oxy 5 Neo",
     "image": "photo.png",
-    "price": "300",
-    "size": "medium"
+    "price": "65000",
+    "size": "5L 93% concentration"
   },{
     "_id": {
       "$oid": "5eee6692a27a66807cf2bea4"
     },
-    "name": "Elk Burger",
+    "name": "BPL OXY Neo Dual",
     "image": "photo.png",
-    "price": "200",
-    "size": "small"
+    "price": "35000",
+    "size": "5L 93% concentration"
   },{
     "_id": {
       "$oid": "5eee66a5a27a66807cf2bea5"
     },
-    "name": "Portobello Mushroom Burgers",
+    "name": "Oxygen Cylinder Kit",
     "image": "photo.png",
-    "price": "500",
-    "size": "large"
+    "price": "20000",
+    "size": "450 Liters"
   },{
     "_id": {
       "$oid": "5eee66c4a27a66807cf2bea6"
     },
-    "name": "Turkey Burgers",
+    "name": "OXY99",
     "image": "photo.png",
-    "price": "350",
-    "size": "medium"
+    "price": "4500",
+    "size": "75 Liters"
   },{
     "_id": {
       "$oid": "5eee66cfa27a66807cf2bea7"
     },
-    "name": "Veggie Burgers",
+    "name": "Philipost",
     "image": "photo.png",
-    "price": "200",
-    "size": "small"
+    "price": "45000",
+    "size": "5L 93% concentration"
   },{
     "_id": {
       "$oid": "5eee66eea27a66807cf2bea8"
     },
-    "name": "Bison Burgers",
+    "name": "BPL Neo",
     "image": "photo.png",
-    "price": "600",
-    "size": "large"
+    "price": "85000",
+    "size": "5L 93% concentration"
   },{
     "_id": {
       "$oid": "5eee6717a27a66807cf2bea9"
     },
-    "name": "Wild Salmon Burgers",
+    "name": "BPL Dual",
     "image": "photo.png",
-    "price": "500",
-    "size": "medium"
+    "price": "43000",
+    "size": "5L 93% concentration"
   }]

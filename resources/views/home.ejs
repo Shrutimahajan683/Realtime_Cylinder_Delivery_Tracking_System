@@ -2,27 +2,27 @@
     <section class="hero py-16">
         <div class="container mx-auto flex items-center justify-between">
             <div class="w-1/2">
-            <h6 class="text-lg"><em>Are you hungry?</em></h6>
-            <h1 class="text-6xl font-bold">Get yourself a burger then!</h1>
+            <h6 class="text-lg"><em>Welcome to Oxygen Cylinder Management System</em></h6>
+            <h1 class="text-6xl font-bold">AVAIL OXYGEN CYLINDER </h1>
             <button class=" btn-primary px-6 py-2 rounded-full text-white font-bold mt-4"></button>
             </div >
             <div class="w-1/2">
-          <img class="h-40 mb-4 mx-auto "src="img/burger.png" >
+          <img class="h-40 mb-4 mx-auto "src="img/oxygen.png" >
             </div>
         </div>
     </section>
     <section class="menu container mx-auto py-8">
-   <h1 class="text-xl  font-bold mb-8">All Burgers</h1>
+   <h1 class="text-xl  font-bold mb-8">OXYGEN CYLINDER Availability</h1>
    <div class="grid grid-cols-4 col-gap-12 row-gap-12">
-    <%burgers.forEach(function(burgers){ %>
-        <div class="w-40 ">
-            <img class="h-40 mb-4 mx-auto "src="img/<%=burgers.image%>">
+    <%oxygen.forEach(function(oxygen){ %>
+        <div class="w-40 mt-4">
+            <img class="h-40 mb-4 mx-auto "src="img/<%=oxygen.image%>">
             <div class="text-center">
-                <h2 class="mb-4 text-lg"><%=burgers.name%></h2>
-                <span class=" size py-1 px-4 rounded-full uppercase txt-xs"><%=burgers.size%></span>
+                <h2 class="mb-4 text-lg"><%=oxygen.name%></h2>
+                <span class=" size py-1 px-4 rounded-full uppercase txt-xs"><%=oxygen.size%></span>
                 <div class="flex item-centre justify-around mt-6">
-                    <span class="font-bold text-lg">Rs <%=burgers.price%></span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                    <span class="font-bold text-lg">Rs <%=oxygen.price%></span>
+                    <button data-oxygen="<%= JSON.stringify(oxygen)%>" class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
                         <span>+</span>
                         <Span class=ml-4>Add</Span>
                     </button>
