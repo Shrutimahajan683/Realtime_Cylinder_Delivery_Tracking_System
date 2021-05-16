@@ -10,6 +10,7 @@ const session=require('express-session')
 const flash=require('express-flash')
 const MongoDbStore=require('connect-mongo')
 const passport=require('passport')
+const Emitter=require('events')
 
 const url='mongodb://localhost/oxygen';
 mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:true});
@@ -22,6 +23,9 @@ connection.once('open',()=>{
 
 
 
+const eventEmitter=new Emitter()
+app.set('eventEmitter',eventEmitter)
+
 
 app.use(session({
     secret:process.env.COOKIES_SECRET,
@@ -31,6 +35,8 @@ app.use(session({
     }),
     saveUninitialized:false,
 cookie:{maxAge:1000*60*60*24}}))
+
+
 
 const passportInit=require('./app/config/passport')
 passportInit(passport)
@@ -53,6 +59,22 @@ app.set('view engine','ejs')
 
 require('./routes/web')(app)
    
-app.listen(PORT,()=>{
+const server=app.listen(PORT,()=>{
     console.log('hey')
+})
+
+const io=require('socket.io')(server)
+
+io.on('connection',(socket)=>{
+        socket.on('join',(orderId)=>{
+            console.log(orderId)
+         socket.join(orderId)
+        })
+})
+
+eventEmitter.on('orderUpdated',(data)=>{
+    io.to(`order_${data.id}`).emit('orderUpdated',data)
+})
+eventEmitter.on('orderPlaced',(data)=>{
+    io.to('adminRoom').emit('orderPlaced',data)
 })
